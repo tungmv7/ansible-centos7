@@ -1,0 +1,6 @@
+---
+- hosts: mean
+  sudo: yes
+  roles:
+  - common
+  # - nodejs
