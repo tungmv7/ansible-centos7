@@ -1,0 +1,5 @@
+---
+- name: Install Node Source
+  command: curl -sL {{node_source}} | bash -
+  command: yum install -y nodejs npm
+  command: npm install mongoose

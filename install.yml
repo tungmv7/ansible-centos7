@@ -2,5 +2,6 @@
 - hosts: mean
   sudo: yes
   roles:
-  - common
+  # - common
   # - nodejs
+  - mongodb
