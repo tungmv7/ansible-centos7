@@ -8,8 +8,11 @@
 - name: Create new cluster
   command: postgresql-setup initdb
 
-- name: Load configuration file
+- name: Load permission file
   template: src=pg_hba.conf.j2 dest=/var/lib/pgsql/data/pg_hba.conf
+
+- name: Load configuration file
+  template: src=postgresql.conf.j2 dest=/var/lib/pgsql/data/postgresql.conf
 
 - name: Automatic load when boot
   command: systemctl enable postgresql.service
