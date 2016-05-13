@@ -1,0 +1,34 @@
+server {
+        listen          {{conf_port}};
+        server_name     {{conf_domain}};
+        root            {{conf_root_path}};
+        access_log      {{conf_access_log}};
+
+        client_max_body_size {{conf_client_max_body_size}};
+
+        location / {
+            index index.html index.htm index.php;
+        }
+
+        location ~ \.htaccess {
+            deny all;
+        }
+
+        location ~* \.(gif|jpg|jpeg|png|css|js)$ {
+            expires max;
+        }
+
+        location ~ \.php$ {
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_index index.php;
+            fastcgi_pass  unix:/var/run/php-fpm/www.sock;         
+            try_files $uri =404;
+            include       fastcgi_params;
+            fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+            fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+        }
+
+        location ~ /\.(ht|svn|git) {
+            deny all;
+        }  
+}

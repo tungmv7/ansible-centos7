@@ -1,0 +1,12 @@
+---
+- name: Clone Phalcon Devtools Repository
+  command: git clone {{phalcon_dev_tools_repository}}
+
+- name: Install Phalcon Devtools
+  command: sudo ./phalcon.sh chdir=/home/vagrant/phalcon-devtools
+
+- name: Create symbolink
+  command: ln -s /home/vagrant/phalcon-devtools/phalcon.php /usr/bin/phalcon
+
+- name: Set permission
+  command: chmod ugo+x /usr/bin/phalcon

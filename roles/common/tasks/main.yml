@@ -5,23 +5,23 @@
 - name: Install Remi repository
   command: rpm -Uivh --replacepkgs {{remi_repository}}
 
-- name: Install libselinux-python
-  yum: name=libselinux-python state=present
-
 - name: Change SELinux Policy Mode
-  command: setenforce permissive
+  command: setenforce 0
   ignore_errors: True
 
-- name: Install gcc
-  yum: name=gcc state=present
+- name: Copy SELinux configuration file
+  copy: src=config dest=/etc/selinux/config owner=root group=root
 
 - name: Install wget
   yum: name=wget state=present
 
+- name: Install gcc
+  yum: name=gcc state=present
+
 - name: Install Git
   yum: name=git state=present
 
-- name: Install Vim
+- name: Install VIM
   yum: name=vim state=present
 
 - name: Install Net tools

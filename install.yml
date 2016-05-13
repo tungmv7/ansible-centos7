@@ -1,7 +1,5 @@
 ---
-- hosts: mean
+- hosts: dev
   sudo: yes
   roles:
-  # - common
-  # - nodejs
-  - mongodb
+  - pgsql

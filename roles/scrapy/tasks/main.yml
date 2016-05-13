@@ -1,0 +1,23 @@
+---
+- name: Install pip
+  command: easy_install pip
+
+- name: Install lib python libffi openssl libxml2 libxslt libjpeg libjpeg-devel
+  yum: state=present name={{ item }}
+  with_items:
+  - python-devel
+  - libffi-devel
+  - openssl-devel
+  - libxml2-devel
+  - libxslt-devel
+  - libjpeg
+  - libjpeg-devel
+
+- name: Install PIL for image download
+  command: pip install Pillow
+
+- name: Install Scrappy
+  command: pip install Scrapy
+
+- name: Install pymongo
+  command: pip install pymongo

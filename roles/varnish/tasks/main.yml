@@ -1,0 +1,10 @@
+---
+- name: Update Repo
+  command: rpm --nosignature -i {{varnish_repository}}
+
+- name: Install Varnish
+  yum: name=varnish state=latest
+
+- name: Auto start Varnish
+  command: systemctl enable varnish
+  notify: restart varnish

@@ -8,3 +8,6 @@
 - name: Start mongodb
   command: systemctl enable mongod
   command: systemctl start mongod
+
+- name: Install php-mongo
+  command: pecl install mongo
