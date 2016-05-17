@@ -2,4 +2,7 @@
 - hosts: dev
   sudo: yes
   roles:
-  - pgsql
+  - common
+  - percona
+  - nginx
+  - php-fpm-55
