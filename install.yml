@@ -6,3 +6,5 @@
   - percona
   - nginx
   - php-fpm-55
+  - nodejs
+  - redis
