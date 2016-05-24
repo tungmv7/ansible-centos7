@@ -1,3 +1,9 @@
 ---
 - name: Install Redis
   yum: name=redis
+
+- name: Automatic load when boot
+  command: systemctl enable redis.service
+
+- name: Be sure redis is running and enable
+  service: name=redis state=running enabled=true
