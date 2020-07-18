@@ -1,3 +1,0 @@
----
-- name: Restart mysqld.service
-  command: systemctl restart mysqld.service

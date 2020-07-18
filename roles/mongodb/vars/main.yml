@@ -1,3 +1,0 @@
----
-mongo_x86_64_repo: http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
-mongo_x86_64_3.0_repo: http://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.0/x86_64/

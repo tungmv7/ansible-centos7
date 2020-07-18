@@ -1,10 +1,11 @@
 ---
 - hosts: dev
-  sudo: yes
+  # remote_user: root
+  become: yes
   roles:
-  - common
-  - percona
-  - nginx
-  - php-fpm-55
-  - nodejs
-  - redis
+    # - common
+    # - firewalld
+    # - nginx
+    # - php-fpm-71
+    # - nginx-conf
+    - composer

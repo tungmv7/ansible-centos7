@@ -1,3 +1,0 @@
----
-- name: Restart php-fpm.service
-  command: systemctl restart php-fpm.service
