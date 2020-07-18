@@ -1,0 +1,10 @@
+---
+- hosts: pepsi-db
+  # remote_user: root
+  become: yes
+  roles:
+    # - common
+    # - mariadb
+    # - php-fpm-71
+    # - composer
+    - nginx

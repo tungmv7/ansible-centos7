@@ -1,0 +1,6 @@
+pfx: pass - ttttdt
+
+
+ server_name 1022xuly.binhduong.gov.vn;
+ ssl_certificate /home/hieu/ssl_binhduong/domain.crt;
+ ssl_certificate_key /home/hieu/ssl_binhduongdomain.rsa;

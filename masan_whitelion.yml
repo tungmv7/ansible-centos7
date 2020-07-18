@@ -1,0 +1,12 @@
+---
+- hosts: whitelion
+  # remote_user: root
+  become: yes
+  roles:
+    # - coming-soon
+    # - common
+    # - nginx
+    # - php-fpm-71
+    # - mariadb
+    - nginx-conf
+    # - composer

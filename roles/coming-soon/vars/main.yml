@@ -1,0 +1,8 @@
+---
+conf_name: 1022_gov
+conf_domain: "*.binhduong.gov.vn"
+conf_port: 80
+# don't include / in end of path
+conf_root_path: /app/comming-soon
+conf_access_log: /var/log/nginx/access.log main buffer=16k
+conf_client_max_body_size: 5M

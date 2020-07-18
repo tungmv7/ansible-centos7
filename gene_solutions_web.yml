@@ -1,0 +1,10 @@
+---
+- hosts: genesolutions-web
+  # remote_user: root
+  become: yes
+  roles:
+    # - common
+    # - nginx
+    # - php-fpm-71
+    - nginx-conf-gs
+    # - composer  

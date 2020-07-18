@@ -1,0 +1,13 @@
+---
+- name: Install MariaDB repo
+  copy: src=mariadb.repo dest=/etc/yum.repos.d/mariadb.repo owner=root group=root mode=644
+
+- name: Install MariaDB Server
+  yum: name=MariaDB-server state=latest
+
+- name: Install MariaDB Client
+  yum: name=MariaDB-client state=latest
+
+- name: Auto start MariaDB
+  command: systemctl enable mysql
+  notify: restart mysql

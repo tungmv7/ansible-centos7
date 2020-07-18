@@ -1,0 +1,7 @@
+---
+- hosts: genesolutions-db
+  # remote_user: root
+  become: yes
+  roles:
+    - common
+    - mariadb

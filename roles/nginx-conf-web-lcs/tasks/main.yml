@@ -1,0 +1,27 @@
+---
+- name: Create Folder for fefault source
+  file: path={{conf_root_path}} state=directory mode=0755
+
+- name: Copy default configuration
+  template: src=default.conf.j2 dest=/etc/nginx/conf.d/{{conf_name}}.conf mode=0644
+  notify: Restart nginx.service
+
+- name: Create Folder for Certs
+  file: path=/etc/nginx/certs state=directory owner=nginx group=nginx
+
+- name: Copy SSL Bundle
+  copy: src=lcs/STAR_lcs_com_vn-bundle.crt dest=/etc/nginx/certs/cert.crt owner=nginx group=nginx
+
+- name: Copy SSL Cer
+  copy: src=lcs/STAR_lcs_com_vn.cer dest=/etc/nginx/certs/cert.cer owner=nginx group=nginx
+
+- name: Copy SSL key
+  copy: src=lcs/STAR_lcs_com_vn.key dest=/etc/nginx/certs/cert.key owner=nginx group=nginx
+
+# fix bugs related with SELinux
+# keywords: Why does Nginx return a 403 even though all permissions are set properly?
+# http://stackoverflow.com/questions/22586166/why-does-nginx-return-a-403-even-though-all-permissions-are-set-properly
+# check: ls -dZ /srv/www
+# - name: Fix bugs related with SELinux
+#   command: setenforce permissive
+#   command: chcon -Rt httpd_sys_content_t {{conf_root_path}}

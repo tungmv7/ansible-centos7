@@ -1,0 +1,8 @@
+---
+- hosts: dev
+  # remote_user: root
+  become: yes
+  tasks:
+    - name: Clone source from git
+      command: cd /sources
+      command: git clone https://git.lcs.com.vn/ldc/1022-website-template.git

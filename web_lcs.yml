@@ -1,0 +1,12 @@
+---
+- hosts: web-lcs
+  # remote_user: root
+  become: yes
+  roles:
+    # - coming-soon
+    # - common
+    # - nginx
+    # - php-fpm-71
+    # - mariadb
+    # - composer  
+    - nginx-conf-web-lcs
